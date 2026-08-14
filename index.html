@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="Star Energia Solar - Energia solar que transforma. Instalação de placas solares.">
+  <title>Star Energia Solar | Energia que Transforma</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #1e2f2c;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .logo-text, .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(2, 35, 28, 0.92);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: all 0.4s ease;
+      padding: 8px 0;
+    }
+    header.scrolled {
+      background: rgba(2, 35, 28, 0.98);
+      padding: 5px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo h1 {
+      font-size: 1.2rem;
+      color: #FFE6A7;
+      transition: 0.3s;
+    }
+    .logo span {
+      color: #FFD966;
+    }
+    .logo p {
+      font-size: 0.5rem;
+      letter-spacing: 1.5px;
+      color: #CFE6DE;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.8rem;
+      transition: 0.3s;
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: #FFD966;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FFD966;
+      transition: 0.3s;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .social-header {
+      display: flex;
+      gap: 12px;
+    }
+    .social-header a {
+      color: white;
+      font-size: 1rem;
+      transition: 0.3s;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+    .social-header a:hover {
+      color: #FFD966;
+      transform: translateY(-2px);
+      background: rgba(255,217,102,0.2);
+    }
+
+    /* Hero Carrossel */
+    .hero-carousel {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+    .hero-carousel .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    .hero-carousel .swiper-slide {
+      position: relative;
+    }
+    .hero-carousel .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(2,35,28,0.7) 0%, rgba(0,0,0,0.4) 100%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-text-box {
+      max-width: 800px;
+      padding: 20px;
+      animation: fadeInUp 1s ease;
+    }
+    .hero-text-box .badge {
+      background: rgba(255,217,102,0.2);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      color: #FFE6A7;
+      font-weight: 500;
+    }
+    .hero-text-box h1 {
+      font-size: 2.8rem;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero-text-box h1 span {
+      color: #FFD966;
+    }
+    .hero-text-box p {
+      font-size: 1.1rem;
+      color: #f0f7f4;
+      margin-bottom: 30px;
+    }
+    .btn-whatsapp-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      padding: 14px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+    .btn-whatsapp-hero:hover {
+      transform: scale(1.05);
+      background: #128C7E;
+    }
+    @media (max-width: 768px) {
+      .hero-text-box h1 { font-size: 1.8rem; }
+      .hero-text-box p { font-size: 0.9rem; }
+      .hero-carousel { height: 85vh; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #0B3B2F;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .section-title.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #FFD966;
+      margin: 12px auto 0;
+      border-radius: 3px;
+    }
+
+    /* Valores */
+    .values-section {
+      padding: 70px 0;
+      background: #ffffff;
+    }
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .value-card {
+      background: #FEF9E6;
+      border-radius: 32px;
+      padding: 30px 25px;
+      text-align: center;
+      width: 280px;
+      transition: all 0.4s;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .value-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .value-card:hover {
+      transform: translateY(-10px);
+      background: #FFFBEE;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    }
+    .value-card i {
+      font-size: 2.5rem;
+      color: #FFB347;
+      margin-bottom: 20px;
+    }
+    .value-card h4 {
+      font-size: 1.3rem;
+      color: #064e3a;
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      font-size: 0.85rem;
+      color: #4a6b5f;
+    }
+    .green-quote {
+      background: #EFFAF5;
+      border-left: 6px solid #FFD966;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 40px auto 0;
+      max-width: 800px;
+      text-align: center;
+      font-style: italic;
+      font-weight: 500;
+      color: #064e3a;
+    }
+
+    /* Serviços - COM IMAGENS */
+    .services-section {
+      background: linear-gradient(135deg, #f5f8f6, #eef3f0);
+      padding: 70px 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .service-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+    }
+    .service-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .service-card:hover .service-card-img {
+      transform: scale(1.05);
+    }
+    .service-card-content {
+      padding: 20px 20px 25px;
+      text-align: center;
+    }
+    .service-card-content i {
+      font-size: 2rem;
+      color: #FFB347;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .service-card-content h4 {
+      font-size: 1.1rem;
+      color: #064e3a;
+      margin-bottom: 8px;
+    }
+    .service-card-content p {
+      font-size: 0.8rem;
+      color: #4a6b5f;
+      margin-bottom: 5px;
+    }
+    .service-badge {
+      display: inline-block;
+      background: #FFFBEE;
+      color: #FFB347;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 30px;
+      margin-top: 8px;
+    }
+
+    /* Banner de aplicações */
+    .apps-banner {
+      background: linear-gradient(135deg, #064e3a, #0B3B2F);
+      padding: 40px 20px;
+      border-radius: 32px;
+      margin-top: 40px;
+      text-align: center;
+      color: white;
+    }
+    .apps-banner h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    .apps-banner h3 i {
+      color: #FFD966;
+      margin-right: 10px;
+    }
+    .apps-banner p {
+      font-size: 1rem;
+      color: #CFE6DE;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .apps-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .apps-tags span {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(4px);
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #FFE6A7;
+      border: 1px solid rgba(255,217,102,0.2);
+    }
+    .apps-tags span i {
+      margin-right: 8px;
+      color: #FFD966;
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding: 70px 0;
+      background: #ffffff;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+    .faq-item {
+      background: #F8FBF9;
+      margin-bottom: 16px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+    .faq-question {
+      background: white;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      color: #064e3a;
+      transition: 0.3s;
+      border-bottom: 1px solid #e5ece8;
+    }
+    .faq-question i {
+      color: #FFB347;
+      transition: transform 0.3s;
+    }
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      background: #FEFEF7;
+      padding: 0 25px;
+    }
+    .faq-answer p {
+      padding: 18px 0 22px;
+      font-size: 0.85rem;
+      color: #4a6b5f;
+      line-height: 1.5;
+    }
+    .faq-question.active {
+      background: #FFFBEE;
+      border-bottom-color: #FFD966;
+    }
+
+    /* Galeria */
+    .gallery-section {
+      padding: 70px 0;
+      background: #FAFCFB;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .gallery-item {
+      border-radius: 24px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: all 0.4s;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .gallery-item.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .gallery-item:hover { transform: translateY(-8px); }
+    .gallery-item img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-caption { padding: 12px; font-weight: 500; text-align: center; }
+
+    /* Contato */
+    .contact-section {
+      background: linear-gradient(135deg, #f5f8f6, #eef3f0);
+      padding: 70px 0;
+    }
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px;
+      margin-top: 40px;
+    }
+    .contact-form-box {
+      flex: 1;
+      background: white;
+      border-radius: 32px;
+      padding: 35px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .contact-info-box {
+      flex: 1;
+      background: white;
+      border-radius: 32px;
+      padding: 35px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .contact-form-box.visible, .contact-info-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .contact-form-box h3, .contact-info-box h3 {
+      font-size: 1.5rem;
+      color: #064e3a;
+      margin-bottom: 25px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .contact-form-box h3 i, .contact-info-box h3 i {
+      color: #FFB347;
+      font-size: 1.6rem;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e5ece8;
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      background: #FEFEFE;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #FFD966;
+      box-shadow: 0 0 0 3px rgba(255,217,102,0.2);
+    }
+    .btn-submit {
+      background: #064e3a;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-submit:hover {
+      background: #FFB347;
+      transform: translateY(-2px);
+    }
+    .info-detail {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 0;
+      padding: 12px 0;
+      border-bottom: 1px solid #eef0ed;
+    }
+    .info-detail i {
+      width: 40px;
+      height: 40px;
+      background: #FEF9E6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFB347;
+      font-size: 1.1rem;
+    }
+    .info-detail .info-text {
+      flex: 1;
+    }
+    .info-detail .info-text strong {
+      display: block;
+      font-size: 0.8rem;
+      color: #6b8a7c;
+      font-weight: 500;
+    }
+    .info-detail .info-text span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e2f2c;
+    }
+    .whatsapp-btn-contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #25D366;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 25px;
+      transition: all 0.3s;
+    }
+    .whatsapp-btn-contact:hover {
+      transform: scale(1.02);
+      background: #128C7E;
+    }
+    .map-card {
+      background: white;
+      border-radius: 32px;
+      padding: 30px;
+      margin-top: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .map-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .map-card h3 {
+      font-size: 1.3rem;
+      color: #064e3a;
+      margin-bottom: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .map-frame iframe {
+      width: 100%;
+      height: 250px;
+      border-radius: 20px;
+      border: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #02231c;
+      color: #CFE6DE;
+      padding: 50px 0 30px;
+    }
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      text-align: left;
+    }
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    .footer-col p, .footer-col a {
+      font-size: 0.8rem;
+      color: #b5d5cb;
+      text-decoration: none;
+    }
+    .social-footer {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .social-footer a {
+      width: 35px;
+      height: 35px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+    .social-footer a:hover {
+      background: #FFD966;
+      color: #02231c;
+    }
+    hr {
+      border-color: #1e5443;
+      margin: 25px 0 15px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      z-index: 999;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      animation: float 2s infinite;
+      text-decoration: none;
+    }
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-8px);}
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      background: #128C7E;
+    }
+    @media (max-width: 768px) {
+      .contact-form-box, .contact-info-box { padding: 25px 20px; }
+      .info-detail { gap: 12px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container header-flex">
+    <div class="logo">
+      <h1>Star<span>Energia Solar</span></h1>
+      <p>ENERGIA QUE TRANSFORMA</p>
+    </div>
+    <div class="nav-links">
+      <a href="#">Início</a>
+      <a href="#valores">Por que nós?</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="social-header">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5518996313150" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Carrossel -->
+<section class="hero-carousel">
+  <div class="swiper heroSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&h=1080&fit=crop" alt="Instalação solar"></div>
+      <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?w=1920&h=1080&fit=crop" alt="Painéis em residência"></div>
+      <div class="swiper-slide"><img src="https://portalsolar-images.s3.us-east-2.amazonaws.com/institucional-and-info-production/images/07a51a7f-8e48-41f9-b719-4fce4e0d643a/Tamanho-forma-imagem.jpg" alt="Campo solar"></div>
+      <div class="swiper-slide"><img src="https://portalsolar-images.s3.us-east-2.amazonaws.com/institucional-and-info-production/images/b35630bf-bd79-4783-97f3-13971155b9f7/o-que-%C3%A9-energia-solar.jpg" alt="Indústria sustentável"></div>
+    </div>
+    <div class="carousel-overlay">
+      <div class="hero-text-box">
+        <div class="badge"><i class="fas fa-solar-panel"></i> +500 clientes satisfeitos</div>
+        <h1>Star Energia Solar <br> <span>Energia que transforma vidas</span></h1>
+        <p>Sua conta de luz nunca mais será a mesma. Projetos personalizados, economia real e compromisso com o futuro renovável.</p>
+        <a href="https://wa.me/5518996313150?text=Olá! Quero saber mais sobre energia solar!" class="btn-whatsapp-hero" target="_blank">
+          <i class="fab fa-whatsapp"></i> Consultoria gratuita
+        </a>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<!-- Por que nos escolher -->
+<section id="valores" class="values-section">
+  <div class="container">
+    <div class="section-title">Por que escolher a Star?</div>
+    <div class="values-grid">
+      <div class="value-card"><i class="fas fa-leaf"></i><h4>Energia Renovável</h4><p>Compromisso com o meio ambiente e geração limpa, reduzindo emissões de CO₂.</p></div>
+      <div class="value-card"><i class="fas fa-hand-holding-heart"></i><h4>Atendimento Humanizado</h4><p>Nos importamos com cada cliente, do projeto à instalação e pós-venda.</p></div>
+      <div class="value-card"><i class="fas fa-chart-line"></i><h4>Economia Garantida</h4><p>Até 98% de redução na conta de luz com retorno rápido do investimento.</p></div>
+      <div class="value-card"><i class="fas fa-tools"></i><h4>Qualidade e Garantia</h4><p>Equipamentos certificados e 15 anos de garantia nos painéis.</p></div>
+    </div>
+    <div class="green-quote">
+      <i class="fas fa-quote-left" style="color:#FFB347; margin-right: 8px;"></i> 
+      Acreditamos que a energia solar é mais que economia: é respeito ao planeta e às próximas gerações. Cada projeto é único e pensado para você.
+    </div>
+  </div>
+</section>
+
+<!-- Serviços com imagens -->
+<section id="servicos" class="services-section">
+  <div class="container">
+    <div class="section-title">Nossos Serviços</div>
+    
+    <!-- Banner de aplicações -->
+    <div class="apps-banner">
+      <h3><i class="fas fa-sun"></i> Energia solar para todos os tipos de negócio e residência</h3>
+      <p>Nossas placas solares atendem diferentes necessidades: residências, comércios, indústrias e áreas rurais. Projetos personalizados para cada perfil.</p>
+      <div class="apps-tags">
+        <span><i class="fas fa-home"></i> Casas</span>
+        <span><i class="fas fa-building"></i> Empresas</span>
+        <span><i class="fas fa-industry"></i> Indústrias</span>
+        <span><i class="fas fa-tractor"></i> Áreas Rurais</span>
+        <span><i class="fas fa-store"></i> Comércios</span>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <!-- Residencial -->
+      <div class="service-card">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?w=600&h=400&fit=crop" alt="Energia solar residencial">
+        <div class="service-card-content">
+          <i class="fas fa-home"></i>
+          <h4>Residencial</h4>
+          <p>Casas e apartamentos com redução imediata na conta de luz.</p>
+          <span class="service-badge">🏠 Economia garantida</span>
+        </div>
+      </div>
+      
+      <!-- Comercial -->
+      <div class="service-card">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop" alt="Energia solar comercial">
+        <div class="service-card-content">
+          <i class="fas fa-building"></i>
+          <h4>Comercial</h4>
+          <p>Lojas, supermercados e empresas com alto consumo.</p>
+          <span class="service-badge">🏢 Até 95% de economia</span>
+        </div>
+      </div>
+      
+      <!-- Industrial -->
+      <div class="service-card">
+        <img class="service-card-img" src="https://portalsolar-images.s3.us-east-2.amazonaws.com/institucional-and-info-production/images/07a51a7f-8e48-41f9-b719-4fce4e0d643a/Tamanho-forma-imagem.jpg" alt="Energia solar industrial">
+        <div class="service-card-content">
+          <i class="fas fa-industry"></i>
+          <h4>Industrial</h4>
+          <p>Sistemas de grande porte para fábricas e galpões.</p>
+          <span class="service-badge">🏭 Máxima eficiência</span>
+        </div>
+      </div>
+      
+      <!-- Rural -->
+      <div class="service-card">
+        <img class="service-card-img" src="https://portalsolar-images.s3.us-east-2.amazonaws.com/institucional-and-info-production/images/b5e0d945-bb85-4c93-82ff-57b70ab074c4/energia-solar-fotovoltaica-no-brasil.webp" alt="Energia solar rural">
+        <div class="service-card-content">
+          <i class="fas fa-tractor"></i>
+          <h4>Rural</h4>
+          <p>Irrigação, bombeamento e energia para propriedades.</p>
+          <span class="service-badge">🌾 Sustentável</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="section-title">Perguntas Frequentes</div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          Como funciona a energia solar?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Os painéis solares captam a luz do sol e geram corrente contínua. Um inversor converte para corrente alternada, usada em residências e empresas. A energia não utilizada é injetada na rede e vira créditos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Vale a pena instalar energia solar?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim! A economia na conta de luz pode chegar a 95%, com retorno do investimento entre 3 e 5 anos. Além disso, valoriza o imóvel e contribui com a sustentabilidade.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Qual a vida útil dos painéis solares?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Os painéis de qualidade possuem garantia de 25 anos de desempenho e vida útil superior a 30 anos. A Star utiliza módulos certificados internacionalmente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Precisa de bateria?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>A maioria dos sistemas no Brasil é on-grid (conectada à rede elétrica), sem necessidade de baterias. Você usa energia da concessionária à noite e compensa com os créditos gerados durante o dia.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          A Star oferece manutenção?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim, oferecemos contratos de manutenção preventiva e limpeza, garantindo máxima performance ao longo dos anos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galeria -->
+<section id="galeria" class="gallery-section">
+  <div class="container">
+    <div class="section-title">Trabalhos Realizados</div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?w=600&h=400&fit=crop" alt=""><div class="gallery-caption">🏠 Residencial 6,2kWp</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop" alt=""><div class="gallery-caption">🏢 Comercial 34kWp</div></div>
+      <div class="gallery-item"><img src="https://portalsolar-images.s3.us-east-2.amazonaws.com/institucional-and-info-production/images/4771a504-0e3a-4331-885a-da4531399080/imagem-2.jpg" alt=""><div class="gallery-caption">🌾 Bombeamento rural</div></div>
+      <div class="gallery-item"><img src="https://portalsolar-images.s3.us-east-2.amazonaws.com/institucional-and-info-production/images/b35630bf-bd79-4783-97f3-13971155b9f7/o-que-%C3%A9-energia-solar.jpg" alt=""><div class="gallery-caption">🏭 Indústria 120kWp</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="contact-section">
+  <div class="container">
+    <div class="section-title">Fale Conosco</div>
+    <div class="contact-wrapper">
+      <div class="contact-form-box">
+        <h3><i class="fas fa-envelope"></i> Envie sua dúvida</h3>
+        <form id="contactForm">
+          <div class="form-group"><input type="text" placeholder="Seu nome" required></div>
+          <div class="form-group"><input type="email" placeholder="Seu e-mail" required></div>
+          <div class="form-group"><input type="tel" placeholder="WhatsApp"></div>
+          <div class="form-group"><textarea rows="3" placeholder="Sua mensagem..."></textarea></div>
+          <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar mensagem</button>
+        </form>
+      </div>
+      <div class="contact-info-box">
+        <h3><i class="fas fa-map-marker-alt"></i> Contato direto</h3>
+        <div class="info-detail"><i class="fas fa-location-dot"></i><div class="info-text"><strong>Endereço</strong><span>Alameda dos Ipês, 850 - Presidente Prudente/SP</span></div></div>
+        <div class="info-detail"><i class="fab fa-whatsapp"></i><div class="info-text"><strong>WhatsApp</strong><span>(18) 99631-3150</span></div></div>
+        <div class="info-detail"><i class="fas fa-clock"></i><div class="info-text"><strong>Horário</strong><span>Seg-Sex: 8h às 18h | Sáb: 9h às 13h</span></div></div>
+        <a href="https://wa.me/5518996313150?text=Olá! Quero um orçamento!" class="whatsapp-btn-contact" target="_blank"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-card">
+      <h3><i class="fas fa-map-pin"></i> Onde estamos</h3>
+      <div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1850.5550199785576!2d-51.4155549!3d-22.121952999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9493aa9146650e3d%3A0x3c0ba4c4f77db0b!2sPresidente%20Prudente%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1698023456789" loading="lazy"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-flex">
+      <div class="footer-col"><h4>Star Energia Solar</h4><p>Sustentabilidade que gera economia real.</p></div>
+      <div class="footer-col"><h4>Links</h4><p><a href="#valores">Por que nós</a></p><p><a href="#faq">FAQ</a></p><p><a href="#contato">Contato</a></p></div>
+      <div class="footer-col"><h4>Contato</h4><p>contato@starenergiasolar.com.br</p><p>(18) 99631-3150</p><div class="social-footer"><a href="#"><i class="fab fa-instagram"></i></a><a href="https://wa.me/5518996313150"><i class="fab fa-whatsapp"></i></a></div></div>
+    </div>
+    <hr><p style="text-align:center; font-size:0.7rem;">© 2025 Star Energia Solar - Energia que transforma vidas.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5518996313150?text=Olá! Quero um orçamento!" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  new Swiper('.heroSwiper', {
+    loop: true, autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    speed: 1000, effect: 'fade', fadeEffect: { crossFade: true }
+  });
+
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 30) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+
+  const animatedElements = document.querySelectorAll('.section-title, .value-card, .service-card, .gallery-item, .contact-form-box, .contact-info-box, .map-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.2 });
+  animatedElements.forEach(el => observer.observe(el));
+
+  // FAQ - Todas começam fechadas
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', function() {
+      const answer = this.nextElementSibling;
+      const isActive = this.classList.contains('active');
+      
+      // Fecha todas as outras perguntas
+      document.querySelectorAll('.faq-question').forEach(qq => {
+        qq.classList.remove('active');
+        qq.nextElementSibling.style.maxHeight = null;
+      });
+      
+      // Se a clicada não estava ativa, abre ela
+      if(!isActive) {
+        this.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+  // NÃO abre nenhuma automaticamente
+
+  document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('✅ Mensagem enviada! Nossa equipe retornará em breve.');
+    this.reset();
+  });
+
+  document.querySelectorAll('.nav-links a, footer a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const hash = this.getAttribute('href');
+      if(hash && hash !== "#" && hash.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(hash);
+        if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
