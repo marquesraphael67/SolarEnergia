@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
   <meta name="description" content="Gerasol | Energia Solar - Empresa pioneira em energia solar em Mato Grosso. +900 clientes satisfeitos. Orçamento gratuito.">
   <title>Gerasol | Energia Solar</title>
   
@@ -22,6 +22,7 @@
       background: #f5f7f6;
       color: #1a2e2a;
       overflow-x: hidden;
+      width: 100%;
     }
 
     html {
@@ -29,14 +30,15 @@
     }
 
     .container {
+      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
     /* ===== HEADER / NAVBAR ===== */
     header {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
       box-shadow: 0 2px 20px rgba(0,0,0,0.08);
       position: fixed;
@@ -44,13 +46,13 @@
       top: 0;
       left: 0;
       z-index: 1000;
-      padding: 12px 0;
+      padding: 10px 0;
       transition: all 0.3s;
     }
 
     header.scrolled {
       box-shadow: 0 4px 30px rgba(0,0,0,0.12);
-      padding: 8px 0;
+      padding: 6px 0;
     }
 
     .header-flex {
@@ -58,11 +60,11 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 10px;
     }
 
     .logo h1 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #0f3b2e;
       font-family: 'Playfair Display', serif;
@@ -71,49 +73,46 @@
       color: #f5a623;
     }
     .logo p {
-      font-size: 0.6rem;
-      letter-spacing: 2px;
+      font-size: 0.45rem;
+      letter-spacing: 1.5px;
       color: #7a9a8a;
       font-weight: 500;
     }
 
     .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 0 10px;
+      background: white;
+      border-top: 1px solid #eef3f0;
+    }
+    .nav-links.active {
       display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
     }
     .nav-links a {
       color: #1a2e2a;
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       transition: 0.3s;
-      position: relative;
+      padding: 6px 0;
+      width: 100%;
+      text-align: center;
     }
     .nav-links a:hover {
       color: #f5a623;
     }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #f5a623;
-      transition: 0.3s;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
 
     .social-header {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
     .social-header a {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -122,6 +121,7 @@
       color: #1a2e2a;
       transition: 0.3s;
       text-decoration: none;
+      font-size: 0.9rem;
     }
     .social-header a:hover {
       background: #f5a623;
@@ -130,19 +130,22 @@
     }
 
     .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
+      display: block;
+      font-size: 1.4rem;
       cursor: pointer;
       color: #1a2e2a;
+      background: none;
+      border: none;
+      padding: 4px 8px;
     }
 
     /* ===== BACK TO TOP ===== */
     .back-to-top {
       position: fixed;
-      bottom: 100px;
-      right: 25px;
-      width: 48px;
-      height: 48px;
+      bottom: 85px;
+      right: 15px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: #0f3b2e;
       color: white;
@@ -154,7 +157,7 @@
       justify-content: center;
       box-shadow: 0 5px 20px rgba(0,0,0,0.2);
       transition: all 0.3s;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     .back-to-top.show {
       display: flex;
@@ -166,153 +169,156 @@
 
     /* ===== HERO ===== */
     .hero {
-      padding: 140px 0 80px;
+      padding: 100px 0 50px;
       background: linear-gradient(135deg, #e8f0ec, #d4e3dd);
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-    }
     .hero-flex {
       display: flex;
+      flex-direction: column;
+      gap: 30px;
       align-items: center;
-      gap: 50px;
-      flex-wrap: wrap;
     }
     .hero-content {
-      flex: 1;
-      min-width: 300px;
+      width: 100%;
       position: relative;
       z-index: 2;
+      text-align: center;
     }
     .hero-content .badge {
       display: inline-block;
       background: #f5a623;
       color: white;
-      padding: 6px 20px;
+      padding: 5px 16px;
       border-radius: 40px;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
       text-transform: uppercase;
     }
     .hero-content h1 {
-      font-size: 2.8rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: #0f3b2e;
-      line-height: 1.15;
+      line-height: 1.2;
       font-family: 'Playfair Display', serif;
     }
     .hero-content h1 span {
       color: #f5a623;
     }
     .hero-content p {
-      font-size: 1.05rem;
+      font-size: 0.85rem;
       color: #4a6b5f;
-      margin: 20px 0 30px;
-      max-width: 500px;
+      margin: 12px 0 20px;
+      max-width: 100%;
       line-height: 1.6;
     }
     .hero-stats {
       display: flex;
-      gap: 40px;
-      margin-bottom: 30px;
+      gap: 15px;
+      margin-bottom: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .hero-stats .stat {
       text-align: center;
+      flex: 1;
+      min-width: 70px;
     }
     .hero-stats .stat strong {
       display: block;
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       color: #0f3b2e;
       font-weight: 700;
     }
     .hero-stats .stat span {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       color: #6b8a7c;
     }
 
     .btn-whatsapp {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      gap: 10px;
       background: #25D366;
-      padding: 14px 35px;
+      padding: 12px 28px;
       border-radius: 50px;
       font-weight: 600;
       color: white;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.85rem;
       transition: all 0.3s;
       box-shadow: 0 5px 20px rgba(37,211,102,0.3);
+      width: 100%;
+      max-width: 280px;
     }
     .btn-whatsapp:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       background: #128C7E;
     }
 
     .hero-image {
-      flex: 1;
-      min-width: 280px;
+      width: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       position: relative;
       z-index: 2;
     }
     .hero-image img {
-      max-width: 100%;
-      border-radius: 30px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 24px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+      height: auto;
     }
     .hero-image .floating-badge {
-      position: absolute;
-      bottom: -10px;
-      right: -10px;
+      position: relative;
+      bottom: 0;
+      right: 0;
       background: white;
-      padding: 15px 25px;
-      border-radius: 20px;
+      padding: 10px 18px;
+      border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       color: #0f3b2e;
+      margin-top: -15px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: 10px;
     }
     .hero-image .floating-badge i {
       color: #f5a623;
-      margin-right: 8px;
+      margin-right: 6px;
     }
 
     /* ===== SECTION TITLE ===== */
     .section-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: #0f3b2e;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-family: 'Playfair Display', serif;
     }
     .section-title:after {
       content: '';
       display: block;
-      width: 60px;
+      width: 50px;
       height: 3px;
       background: #f5a623;
-      margin: 12px auto 0;
+      margin: 10px auto 0;
       border-radius: 3px;
     }
     .section-sub {
       text-align: center;
       color: #6b8a7c;
-      margin-bottom: 40px;
-      font-size: 0.95rem;
+      margin-bottom: 25px;
+      font-size: 0.8rem;
     }
 
     /* ===== ANIMAÇÕES ===== */
@@ -330,238 +336,235 @@
 
     /* ===== BENEFÍCIOS ===== */
     .beneficios-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: white;
     }
     .beneficios-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
     }
     .beneficio {
       background: #f8faf9;
-      border-radius: 24px;
-      padding: 30px 20px;
+      border-radius: 18px;
+      padding: 18px 12px;
       text-align: center;
       transition: 0.4s;
       border: 1px solid #eef3f0;
     }
     .beneficio:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.06);
       border-color: #f5a623;
     }
     .beneficio i {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       color: #f5a623;
-      margin-bottom: 15px;
-    }
-    .beneficio h4 {
-      font-size: 1.1rem;
-      color: #0f3b2e;
       margin-bottom: 8px;
     }
+    .beneficio h4 {
+      font-size: 0.8rem;
+      color: #0f3b2e;
+      margin-bottom: 4px;
+    }
     .beneficio p {
-      font-size: 0.85rem;
+      font-size: 0.65rem;
       color: #6b8a7c;
     }
 
     /* ===== CLIENTES ===== */
     .clientes-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: #f5f7f6;
     }
     .clientes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
     }
     .cliente-card {
       background: white;
-      border-radius: 24px;
-      padding: 25px 20px;
+      border-radius: 18px;
+      padding: 18px 12px;
       text-align: center;
       transition: 0.4s;
       border: 1px solid #eef3f0;
     }
     .cliente-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.06);
     }
     .cliente-card i {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       color: #f5a623;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     .cliente-card h4 {
-      font-size: 1rem;
+      font-size: 0.8rem;
       color: #0f3b2e;
     }
     .cliente-card p {
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       color: #6b8a7c;
-      margin-top: 5px;
+      margin-top: 4px;
     }
 
     /* ===== DEPOIMENTOS ===== */
     .depoimentos-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: white;
     }
     .depoimentos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 20px;
     }
     .depoimento-card {
       background: #f8faf9;
-      border-radius: 24px;
-      padding: 30px 25px;
+      border-radius: 18px;
+      padding: 20px 16px;
       border-left: 4px solid #f5a623;
       transition: 0.4s;
     }
     .depoimento-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.06);
     }
     .depoimento-card i.fa-quote-left {
       color: #f5a623;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       opacity: 0.4;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       display: block;
     }
     .depoimento-card p {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
       color: #4a6b5f;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-style: italic;
     }
     .depoimento-card strong {
       display: block;
       color: #0f3b2e;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .depoimento-card span {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: #6b8a7c;
     }
 
     /* ===== COMO FUNCIONA ===== */
     .como-funciona-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: #f5f7f6;
     }
     .passos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-      counter-reset: passo;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
     }
     .passo {
       background: white;
-      border-radius: 24px;
-      padding: 30px 20px;
+      border-radius: 18px;
+      padding: 18px 12px;
       text-align: center;
-      position: relative;
       transition: 0.4s;
       box-shadow: 0 8px 25px rgba(0,0,0,0.04);
     }
     .passo:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       box-shadow: 0 16px 40px rgba(0,0,0,0.08);
     }
     .passo span {
       display: inline-block;
-      width: 45px;
-      height: 45px;
+      width: 34px;
+      height: 34px;
       background: #f5a623;
       color: white;
       border-radius: 50%;
-      line-height: 45px;
+      line-height: 34px;
       font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
     }
     .passo i {
       display: block;
-      font-size: 2rem;
+      font-size: 1.4rem;
       color: #0f3b2e;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
     .passo h4 {
-      font-size: 1rem;
+      font-size: 0.8rem;
       color: #0f3b2e;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
     .passo p {
-      font-size: 0.85rem;
+      font-size: 0.65rem;
       color: #6b8a7c;
     }
 
     /* ===== INSTALAÇÕES ===== */
     .instalacoes-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: white;
     }
     .instalacoes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
     .instalacao-card {
-      border-radius: 24px;
+      border-radius: 18px;
       overflow: hidden;
       background: white;
       box-shadow: 0 8px 25px rgba(0,0,0,0.06);
       transition: 0.4s;
     }
     .instalacao-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       box-shadow: 0 16px 40px rgba(0,0,0,0.1);
     }
     .instalacao-card img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
     }
     .instalacao-card .info {
-      padding: 18px 20px;
+      padding: 14px 16px;
     }
     .instalacao-card .info h4 {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #0f3b2e;
     }
     .instalacao-card .info p {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #6b8a7c;
     }
 
     /* ===== QUEM SOMOS ===== */
     .quem-somos-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: #f5f7f6;
     }
     .quem-flex {
       display: flex;
-      gap: 50px;
+      flex-direction: column;
+      gap: 25px;
       align-items: center;
-      flex-wrap: wrap;
     }
     .quem-text {
-      flex: 1;
-      min-width: 280px;
+      width: 100%;
     }
     .quem-text h3 {
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       color: #0f3b2e;
       font-family: 'Playfair Display', serif;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     .quem-text h3 span {
       color: #f5a623;
@@ -569,50 +572,57 @@
     .quem-text p {
       color: #4a6b5f;
       line-height: 1.7;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
     }
     .quem-text .destaque {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       background: white;
-      padding: 15px 20px;
+      padding: 12px 16px;
       border-radius: 16px;
-      margin-top: 15px;
+      margin-top: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.04);
     }
     .quem-text .destaque i {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: #f5a623;
     }
+    .quem-text .destaque strong {
+      font-size: 0.85rem;
+    }
+    .quem-text .destaque p {
+      margin: 0;
+      font-size: 0.7rem;
+    }
     .quem-image {
-      flex: 1;
-      min-width: 280px;
+      width: 100%;
     }
     .quem-image img {
       width: 100%;
-      border-radius: 30px;
+      border-radius: 24px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     }
 
     /* ===== ÁREAS DE ATENDIMENTO ===== */
     .areas-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: white;
     }
     .cidades-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+      gap: 8px;
+      margin-top: 20px;
     }
     .cidade-tag {
       background: #f8faf9;
-      padding: 10px 25px;
+      padding: 6px 14px;
       border-radius: 40px;
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       color: #0f3b2e;
       border: 1px solid #eef3f0;
       transition: 0.3s;
@@ -626,70 +636,74 @@
 
     /* ===== CERTIFICAÇÕES ===== */
     .certificacoes-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: #f5f7f6;
     }
     .certificacoes-flex {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
-      margin-top: 30px;
+      gap: 10px;
+      margin-top: 20px;
     }
     .certificacao {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       background: white;
-      padding: 15px 30px;
-      border-radius: 50px;
+      padding: 8px 16px;
+      border-radius: 40px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.04);
       transition: 0.3s;
     }
     .certificacao:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     }
     .certificacao i {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
       color: #f5a623;
     }
     .certificacao span {
       font-weight: 600;
       color: #0f3b2e;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
 
     /* ===== DÚVIDAS (FAQ) ===== */
     .duvidas-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: white;
     }
     .faq-container {
-      max-width: 800px;
+      max-width: 100%;
       margin: 0 auto;
     }
     .faq-item {
       background: #f8faf9;
-      margin-bottom: 14px;
-      border-radius: 20px;
+      margin-bottom: 10px;
+      border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 3px 15px rgba(0,0,0,0.04);
     }
     .faq-question {
-      padding: 18px 25px;
+      padding: 14px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
       font-weight: 600;
+      font-size: 0.8rem;
       color: #0f3b2e;
       transition: 0.3s;
       border-bottom: 1px solid #eef3f0;
+      gap: 10px;
     }
     .faq-question i {
       color: #f5a623;
       transition: transform 0.3s;
+      font-size: 0.9rem;
+      flex-shrink: 0;
     }
     .faq-question.active i {
       transform: rotate(180deg);
@@ -698,12 +712,12 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out;
-      padding: 0 25px;
+      padding: 0 16px;
       background: white;
     }
     .faq-answer p {
-      padding: 18px 0 22px;
-      font-size: 0.9rem;
+      padding: 14px 0 18px;
+      font-size: 0.75rem;
       color: #4a6b5f;
       line-height: 1.6;
     }
@@ -714,76 +728,75 @@
 
     /* ===== CONTATO ===== */
     .contato-section {
-      padding: 70px 0;
+      padding: 50px 0;
       background: #f5f7f6;
     }
     .contato-flex {
       display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 30px;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 20px;
     }
     .contato-info {
-      flex: 1;
-      min-width: 280px;
+      width: 100%;
     }
     .contato-info h3 {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       color: #0f3b2e;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-family: 'Playfair Display', serif;
     }
     .contato-info .item {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 12px;
     }
     .contato-info .item i {
-      width: 45px;
-      height: 45px;
+      width: 38px;
+      height: 38px;
       background: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #f5a623;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
+      flex-shrink: 0;
     }
     .contato-info .item .text strong {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       color: #6b8a7c;
     }
     .contato-info .item .text span {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
       font-weight: 500;
       color: #1a2e2a;
     }
     .contato-form {
-      flex: 1;
-      min-width: 280px;
+      width: 100%;
       background: white;
-      padding: 30px;
-      border-radius: 28px;
+      padding: 20px;
+      border-radius: 24px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.04);
     }
     .contato-form h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #0f3b2e;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-family: 'Playfair Display', serif;
     }
     .contato-form input,
     .contato-form textarea {
       width: 100%;
-      padding: 14px 18px;
+      padding: 12px 16px;
       border: 2px solid #e5ece8;
       border-radius: 30px;
       font-family: 'Poppins', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       transition: 0.3s;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       background: #f8faf9;
     }
     .contato-form input:focus,
@@ -795,31 +808,32 @@
       background: #0f3b2e;
       color: white;
       border: none;
-      padding: 14px 20px;
+      padding: 12px 20px;
       border-radius: 40px;
       font-weight: 600;
       cursor: pointer;
       width: 100%;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: 0.3s;
     }
     .contato-form .btn-submit:hover {
       background: #f5a623;
+      transform: translateY(-2px);
     }
 
     /* ===== WHATSAPP FLOAT ===== */
     .whatsapp-float {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 20px;
+      right: 15px;
       background: #25D366;
-      width: 58px;
-      height: 58px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: white;
       z-index: 999;
       box-shadow: 0 5px 25px rgba(37,211,102,0.4);
@@ -832,7 +846,7 @@
       50%{transform:scale(1.05);}
     }
     .whatsapp-float:hover {
-      transform: scale(1.1);
+      transform: scale(1.08);
       background: #128C7E;
     }
 
@@ -840,21 +854,21 @@
     footer {
       background: #0f3b2e;
       color: #cfe6de;
-      padding: 40px 0 25px;
+      padding: 30px 0 20px;
     }
     .footer-flex {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
     }
     .footer-col h4 {
-      font-size: 1.1rem;
-      margin-bottom: 12px;
+      font-size: 1rem;
+      margin-bottom: 8px;
       color: #f5a623;
     }
     .footer-col p, .footer-col a {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: #b5d5cb;
       text-decoration: none;
       line-height: 1.8;
@@ -864,18 +878,22 @@
     }
     .footer-social {
       display: flex;
-      gap: 12px;
-      margin-top: 10px;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
     }
     .footer-social a {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       background: rgba(255,255,255,0.08);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: 0.3s;
+      color: #cfe6de;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
     .footer-social a:hover {
       background: #f5a623;
@@ -883,76 +901,159 @@
     }
     hr {
       border-color: #1e5443;
-      margin: 25px 0 15px;
+      margin: 15px 0 12px;
+    }
+    .footer-copy {
+      text-align: center;
+      font-size: 0.6rem;
+      color: #7a9a8a;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 20px 0;
-        background: white;
-      }
-      .nav-links.active {
-        display: flex;
-      }
+    /* ============================================ */
+    /* ===== TABLET (600px a 991px) ===== */
+    /* ============================================ */
+    @media (min-width: 600px) {
       .hero {
-        padding: 120px 0 50px;
+        padding: 120px 0 60px;
       }
       .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
-      .hero-stats {
-        gap: 20px;
+      .hero-content p {
+        font-size: 0.95rem;
       }
       .hero-stats .stat strong {
-        font-size: 1.4rem;
-      }
-      .hero-image .floating-badge {
-        position: relative;
-        bottom: 0;
-        right: 0;
-        margin-top: 15px;
-        text-align: center;
-      }
-      .quem-flex {
-        flex-direction: column;
-      }
-      .section-title {
         font-size: 1.6rem;
       }
-      .back-to-top {
-        bottom: 90px;
-        width: 42px;
-        height: 42px;
-        font-size: 1rem;
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .beneficios-grid, .clientes-grid, .passos-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .depoimentos-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .instalacoes-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .contato-flex {
+        flex-direction: row;
+      }
+      .quem-flex {
+        flex-direction: row;
+      }
+      .footer-flex {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+      }
+      .footer-social {
+        justify-content: flex-start;
       }
     }
 
-    @media (max-width: 480px) {
+    /* ============================================ */
+    /* ===== DESKTOP (992px+) ===== */
+    /* ============================================ */
+    @media (min-width: 992px) {
+      .menu-toggle {
+        display: none;
+      }
+      .nav-links {
+        display: flex !important;
+        width: auto;
+        flex-direction: row;
+        gap: 25px;
+        padding: 0;
+        background: transparent;
+        border-top: none;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+        width: auto;
+        padding: 0;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #f5a623;
+        transition: 0.3s;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .hero-flex {
+        flex-direction: row;
+      }
+      .hero-content {
+        text-align: left;
+      }
       .hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 2.8rem;
+      }
+      .hero-content p {
+        max-width: 500px;
+        font-size: 1.05rem;
       }
       .hero-stats {
-        flex-wrap: wrap;
-        gap: 15px;
+        justify-content: flex-start;
       }
-      .hero-stats .stat {
-        flex: 1;
-        min-width: 80px;
+      .btn-whatsapp {
+        width: auto;
+        max-width: none;
       }
-      .contato-form {
-        padding: 20px;
+      .hero-image .floating-badge {
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        margin-top: 0;
+        margin-right: 0;
+      }
+
+      .beneficios-grid, .clientes-grid, .passos-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
       }
       .depoimentos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .instalacoes-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .quem-flex {
+        flex-direction: row;
+      }
+      .contato-flex {
+        flex-direction: row;
+      }
+      .footer-flex {
+        flex-direction: row;
+        text-align: left;
+      }
+      .footer-social {
+        justify-content: flex-start;
+      }
+
+      .back-to-top {
+        bottom: 100px;
+        right: 25px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+      }
+      .whatsapp-float {
+        bottom: 25px;
+        right: 25px;
+        width: 58px;
+        height: 58px;
+        font-size: 2rem;
       }
     }
   </style>
@@ -966,9 +1067,9 @@
       <h1>Gera<span>sol</span></h1>
       <p>ENERGIA SOLAR</p>
     </div>
-    <div class="menu-toggle" id="menuToggle">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
       <i class="fas fa-bars"></i>
-    </div>
+    </button>
     <div class="nav-links" id="navLinks">
       <a href="#beneficios">Benefícios</a>
       <a href="#clientes">Clientes</a>
@@ -979,8 +1080,8 @@
       <a href="#contato">Contato</a>
     </div>
     <div class="social-header">
-      <a href="https://www.instagram.com/gerasolecoenergia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/5566999219533" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/gerasolecoenergia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5566999219533" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </header>
@@ -993,8 +1094,8 @@
       <h1>Energia solar que <span>transforma</span> vidas</h1>
       <p>+900 clientes satisfeitos. Empresa pioneira em energia solar no estado de Mato Grosso. Faça um orçamento gratuito!</p>
       <div class="hero-stats">
-        <div class="stat"><strong>+900</strong><span>Clientes satisfeitos</span></div>
-        <div class="stat"><strong>+10</strong><span>Anos de experiência</span></div>
+        <div class="stat"><strong>+900</strong><span>Clientes</span></div>
+        <div class="stat"><strong>+10</strong><span>Anos</span></div>
         <div class="stat"><strong>100%</strong><span>Energia limpa</span></div>
       </div>
       <a href="https://wa.me/5566999219533?text=Olá! Quero um orçamento gratuito de energia solar!" class="btn-whatsapp" target="_blank">
@@ -1002,7 +1103,7 @@
       </a>
     </div>
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=450&fit=crop" alt="Energia solar">
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=450&fit=crop" alt="Energia solar" loading="lazy">
       <div class="floating-badge">
         <i class="fas fa-solar-panel"></i> Economia garantida
       </div>
@@ -1019,22 +1120,22 @@
       <div class="beneficio">
         <i class="fas fa-shield-alt"></i>
         <h4>Garantia estendida</h4>
-        <p>Painéis com garantia de 25 anos</p>
+        <p>25 anos nos painéis</p>
       </div>
       <div class="beneficio">
         <i class="fas fa-handshake"></i>
         <h4>Atendimento personalizado</h4>
-        <p>Projeto sob medida para sua necessidade</p>
+        <p>Projeto sob medida</p>
       </div>
       <div class="beneficio">
         <i class="fas fa-trophy"></i>
         <h4>Empresa pioneira</h4>
-        <p>+900 clientes e anos de experiência</p>
+        <p>+900 clientes</p>
       </div>
       <div class="beneficio">
         <i class="fas fa-solar-panel"></i>
         <h4>Equipamentos certificados</h4>
-        <p>Módulos de alta qualidade e eficiência</p>
+        <p>Alta qualidade</p>
       </div>
     </div>
   </div>
@@ -1049,7 +1150,7 @@
       <div class="cliente-card">
         <i class="fas fa-store"></i>
         <h4>Comércios</h4>
-        <p>Lojas, supermercados e restaurantes</p>
+        <p>Lojas e supermercados</p>
       </div>
       <div class="cliente-card">
         <i class="fas fa-home"></i>
@@ -1064,7 +1165,7 @@
       <div class="cliente-card">
         <i class="fas fa-tractor"></i>
         <h4>Áreas Rurais</h4>
-        <p>Propriedades e sítios</p>
+        <p>Sítios e fazendas</p>
       </div>
     </div>
   </div>
@@ -1074,23 +1175,23 @@
 <section id="depoimentos" class="depoimentos-section">
   <div class="container">
     <h2 class="section-title">O que nossos clientes dizem</h2>
-    <p class="section-sub">Depoimentos de quem já economiza com energia solar</p>
+    <p class="section-sub">Depoimentos de quem já economiza</p>
     <div class="depoimentos-grid">
       <div class="depoimento-card">
         <i class="fas fa-quote-left"></i>
-        <p>"Minha conta de luz caiu 90%! A Gerasol fez um trabalho impecável, desde o orçamento até a instalação."</p>
+        <p>"Minha conta de luz caiu 90%! A Gerasol fez um trabalho impecável."</p>
         <strong>João Silva</strong>
         <span>Residencial - Rondonópolis</span>
       </div>
       <div class="depoimento-card">
         <i class="fas fa-quote-left"></i>
-        <p>"Atendimento excelente e instalação rápida. Recomendo a todos que querem economizar e ajudar o meio ambiente."</p>
+        <p>"Atendimento excelente e instalação rápida. Recomendo a todos!"</p>
         <strong>Maria Oliveira</strong>
         <span>Comercial - Cuiabá</span>
       </div>
       <div class="depoimento-card">
         <i class="fas fa-quote-left"></i>
-        <p>"Economia real desde o primeiro mês. A Gerasol é referência em energia solar em Mato Grosso."</p>
+        <p>"Economia real desde o primeiro mês. A Gerasol é referência em MT."</p>
         <strong>Carlos Mendes</strong>
         <span>Industrial - Várzea Grande</span>
       </div>
@@ -1108,25 +1209,25 @@
         <span>1</span>
         <i class="fas fa-file-signature"></i>
         <h4>Orçamento</h4>
-        <p>Faça uma análise gratuita e descubra o potencial da energia solar para você</p>
+        <p>Análise gratuita</p>
       </div>
       <div class="passo">
         <span>2</span>
         <i class="fas fa-ruler-combined"></i>
         <h4>Projeto</h4>
-        <p>Projetamos sob medida para sua residência, comércio ou indústria</p>
+        <p>Sob medida para você</p>
       </div>
       <div class="passo">
         <span>3</span>
         <i class="fas fa-tools"></i>
         <h4>Instalação</h4>
-        <p>Equipe especializada e instalação rápida com toda a segurança</p>
+        <p>Equipe especializada</p>
       </div>
       <div class="passo">
         <span>4</span>
         <i class="fas fa-coins"></i>
         <h4>Economia</h4>
-        <p>Comece a economizar na conta de luz desde o primeiro mês</p>
+        <p>Comece a economizar</p>
       </div>
     </div>
   </div>
@@ -1139,21 +1240,21 @@
     <p class="section-sub">Projetos realizados em Rondonópolis e região</p>
     <div class="instalacoes-grid">
       <div class="instalacao-card">
-        <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?w=600&h=400&fit=crop" alt="Instalação residencial">
+        <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?w=600&h=400&fit=crop" alt="Instalação residencial" loading="lazy">
         <div class="info">
           <h4> Residencial</h4>
           <p>6,2kWp - Rondonópolis/MT</p>
         </div>
       </div>
       <div class="instalacao-card">
-        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop" alt="Instalação comercial">
+        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop" alt="Instalação comercial" loading="lazy">
         <div class="info">
           <h4> Comercial</h4>
           <p>34kWp - Rondonópolis/MT</p>
         </div>
       </div>
       <div class="instalacao-card">
-        <img src="https://images.pexels.com/photos/20844067/pexels-photo-20844067.jpeg" alt="Instalação rural">
+        <img src="https://images.pexels.com/photos/20844067/pexels-photo-20844067.jpeg" alt="Instalação rural" loading="lazy">
         <div class="info">
           <h4> Rural</h4>
           <p>Bombeamento solar - MT</p>
@@ -1175,12 +1276,12 @@
           <i class="fas fa-medal"></i>
           <div>
             <strong>+900 clientes satisfeitos</strong>
-            <p style="margin:0; font-size:0.8rem; color:#6b8a7c;">Empresa pioneira em energia solar no Mato Grosso</p>
+            <p>Empresa pioneira em energia solar em MT</p>
           </div>
         </div>
       </div>
       <div class="quem-image">
-        <img src="https://images.unsplash.com/photo-1533093818119-ac1c47c7e12a?w=600&h=400&fit=crop" alt="Equipe Gerasol">
+        <img src="https://images.pexels.com/photos/6158868/pexels-photo-6158868.jpeg" alt="Equipe Gerasol" loading="lazy">
       </div>
     </div>
   </div>
@@ -1253,7 +1354,7 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>A economia pode chegar a 95% na conta de luz, com retorno do investimento entre 3 e 5 anos. Além disso, você valoriza seu imóvel e contribui com o meio ambiente.</p>
+          <p>A economia pode chegar a 95% na conta de luz, com retorno do investimento entre 3 e 5 anos.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1262,7 +1363,7 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Os painéis de qualidade possuem garantia de 25 anos de desempenho e vida útil superior a 30 anos. A Gerasol utiliza módulos certificados.</p>
+          <p>Os painéis de qualidade possuem garantia de 25 anos de desempenho e vida útil superior a 30 anos.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1271,16 +1372,16 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Sim! Atendemos Rondonópolis e toda a região de Mato Grosso. Faça um orçamento gratuito e veja a viabilidade para sua propriedade.</p>
+          <p>Sim! Atendemos Rondonópolis e toda a região de Mato Grosso. Faça um orçamento gratuito.</p>
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
-          O que é necessário para instalar energia solar?
+          O que é necessário para instalar?
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>É necessário um espaço adequado para os painéis (telhado, laje ou terreno), acesso à rede elétrica e uma análise técnica que a Gerasol faz gratuitamente.</p>
+          <p>É necessário um espaço adequado para os painéis (telhado, laje ou terreno) e acesso à rede elétrica.</p>
         </div>
       </div>
     </div>
@@ -1294,7 +1395,7 @@
     <p class="section-sub">Faça um orçamento gratuito sem compromisso</p>
     <div class="contato-flex">
       <div class="contato-info">
-        <h3><i class="fas fa-map-marker-alt" style="color:#f5a623; margin-right:10px;"></i> Onde estamos</h3>
+        <h3><i class="fas fa-map-marker-alt" style="color:#f5a623; margin-right:8px;"></i> Onde estamos</h3>
         <div class="item">
           <i class="fas fa-location-dot"></i>
           <div class="text">
@@ -1312,16 +1413,16 @@
         <div class="item">
           <i class="fas fa-clock"></i>
           <div class="text">
-            <strong>Horário de atendimento</strong>
+            <strong>Horário</strong>
             <span>Seg-Sex: 8h às 18h</span>
           </div>
         </div>
-        <a href="https://wa.me/5566999219533?text=Olá! Quero um orçamento gratuito de energia solar!" class="btn-whatsapp" target="_blank" style="margin-top:20px;">
+        <a href="https://wa.me/5566999219533?text=Olá! Quero um orçamento gratuito de energia solar!" class="btn-whatsapp" target="_blank" style="margin-top:15px;">
           <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
         </a>
       </div>
       <div class="contato-form">
-        <h3><i class="fas fa-paper-plane" style="color:#f5a623; margin-right:10px;"></i> Envie sua mensagem</h3>
+        <h3><i class="fas fa-paper-plane" style="color:#f5a623; margin-right:8px;"></i> Envie sua mensagem</h3>
         <form id="contactForm">
           <input type="text" placeholder="Seu nome" required>
           <input type="email" placeholder="Seu e-mail" required>
@@ -1341,7 +1442,7 @@
       <div class="footer-col">
         <h4>Gera<span style="color:#f5a623;">sol</span></h4>
         <p>Energia solar que transforma vidas.</p>
-        <p style="font-size:0.8rem; margin-top:5px;">Pioneira em energia solar em Mato Grosso</p>
+        <p style="font-size:0.65rem; margin-top:4px;">Pioneira em energia solar em Mato Grosso</p>
       </div>
       <div class="footer-col">
         <h4>Links</h4>
@@ -1354,22 +1455,21 @@
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
-        <p><i class="fab fa-whatsapp" style="margin-right:8px;"></i> (66) 99921-9533</p>
-        <p><i class="fas fa-envelope" style="margin-right:8px;"></i> contato@gerasol.com.br</p>
+        <p><i class="fab fa-whatsapp" style="margin-right:6px;"></i> (66) 99921-9533</p>
+        <p><i class="fas fa-envelope" style="margin-right:6px;"></i> contato@gerasol.com.br</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/gerasolecoenergia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/5566999219533"><i class="fab fa-whatsapp"></i></a>
-          
+          <a href="https://www.instagram.com/gerasolecoenergia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/5566999219533" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
     <hr>
-    <p style="text-align:center; font-size:0.7rem;">© 2025 Gerasol - Energia Solar | Rondonópolis - Mato Grosso</p>
+    <p class="footer-copy">© 2025 Gerasol - Energia Solar | Rondonópolis - MT</p>
   </div>
 </footer>
 
 <!-- ===== WHATSAPP FLOAT ===== -->
-<a href="https://wa.me/5566999219533?text=Olá! Quero um orçamento gratuito de energia solar!" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/5566999219533?text=Olá! Quero um orçamento gratuito de energia solar!" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -1384,14 +1484,24 @@
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
 
-  menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
     navLinks.classList.toggle('active');
   });
 
+  // Fecha o menu ao clicar em um link
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
     });
+  });
+
+  // Fecha o menu ao clicar fora
+  document.addEventListener('click', function(e) {
+    const header = document.querySelector('header');
+    if (!header.contains(e.target)) {
+      navLinks.classList.remove('active');
+    }
   });
 
   // ===== HEADER SCROLL =====
